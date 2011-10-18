@@ -1,0 +1,21 @@
+About the kata by @eloy_iv
+
+In this kata you'll find a Java implementation. Although I'm not an expert in TDD,
+I tried my best to remain as YAGNI as I could.
+
+The code is pretty straightforward. It's divided into Java code and JUnit test.
+I developed it using standard Eclipse.
+
+You'll see I organized some packages following the evolution of tests and code refactoring.
+It would seem a little awkward to do this homemade versioning and hosting the whole thing
+at github.com, but I find it more easy to navigate through folders to quickly see what's changing
+from one version to another rather than using Git itself. Maybe I'm wrong.
+
+So here's what's into each version.
+
+.v1
+Basic tests for 1, 2 and 3 marbles. Very helpful to clear out some things from my mind,
+like deciding classnames and basic API. Well, that's what TDD is for, isn't it?
+
+.v2
+
