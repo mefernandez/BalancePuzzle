@@ -1,4 +1,4 @@
-package com.d12meses12katas.balance.v4;
+package org.katas.tdd.balance.v4;
 
 import java.util.Arrays;
 

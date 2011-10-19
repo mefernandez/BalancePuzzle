@@ -1,8 +1,10 @@
-package com.d12meses12katas.balance.v2;
+package org.katas.tdd.balance.v2;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.katas.tdd.balance.v2.Marble;
+import org.katas.tdd.balance.v2.Scales;
 
 public class ScalesTest {
 	

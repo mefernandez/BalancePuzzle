@@ -1,10 +1,12 @@
-package com.d12meses12katas.balance.v4;
+package org.katas.tdd.balance.v3;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
 import org.junit.Test;
+import org.katas.tdd.balance.v3.Marble;
+import org.katas.tdd.balance.v3.Solver;
 
 public class PuzzleTest {
 
@@ -20,7 +22,8 @@ public class PuzzleTest {
 
 	@Test
 	public void oneMarbleSolvesInZeroTurns() {
-		Marble[] marbles = new Marble[] {new Marble(1)};
+		Marble[] marbles = new Marble[1];
+		marbles[0] = new Marble(1);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -30,7 +33,9 @@ public class PuzzleTest {
 	
 	@Test
 	public void twoDifferentMarblesSolvesInOneTurn() {
-		Marble[] marbles = createMarblesArray(2,1);
+		Marble[] marbles = new Marble[2];
+		marbles[0] = new Marble(1);
+		marbles[1] = new Marble(2);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -40,7 +45,10 @@ public class PuzzleTest {
 
 	@Test
 	public void threeDifferentMarblesSolvesInOneTurn() {
-		Marble[] marbles = createMarblesArray(3,2);
+		Marble[] marbles = new Marble[3];
+		marbles[0] = new Marble(1);
+		marbles[1] = new Marble(1);
+		marbles[2] = new Marble(2);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -50,7 +58,11 @@ public class PuzzleTest {
 
 	@Test
 	public void fourDifferentMarblesSolvesInTwoTurn() {
-		Marble[] marbles = createMarblesArray(4,3);
+		Marble[] marbles = new Marble[4];
+		marbles[0] = new Marble(1);
+		marbles[1] = new Marble(1);
+		marbles[2] = new Marble(1);
+		marbles[3] = new Marble(2);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -90,18 +102,4 @@ public class PuzzleTest {
 		result = solver.calculateMidElement(6);
 		assertEquals(2, result);
 	}
-
-	private Marble[] createMarblesArray(int howMany, int indexOfHeaviest) {
-		if (indexOfHeaviest < 0 || indexOfHeaviest >= howMany)
-			throw new IndexOutOfBoundsException("The parameter indexOfHeaviest should be in the range [0 .. howMany-1]");
-		Marble[] marbles = new Marble[howMany];
-		for (int i=0; i<howMany; i++) {
-			int weight = 1;
-			if (i == indexOfHeaviest)
-				weight = 2;
-			marbles[i] = new Marble(weight);
-		}
-		return marbles;
-	}
-
 }

@@ -1,4 +1,4 @@
-package com.d12meses12katas.balance.v3;
+package org.katas.tdd.balance.v4;
 
 public class Marble {
 	
