@@ -1,8 +1,10 @@
-package com.d12meses12katas.balance.v1;
+package org.katas.tdd.balance.v1;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.katas.tdd.balance.v1.Marble;
+import org.katas.tdd.balance.v1.Solver;
 
 public class PuzzleTest {
 
