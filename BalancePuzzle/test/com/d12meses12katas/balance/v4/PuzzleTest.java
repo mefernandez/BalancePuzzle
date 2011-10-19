@@ -20,7 +20,7 @@ public class PuzzleTest {
 
 	@Test
 	public void oneMarbleSolvesInZeroTurns() {
-		Marble[] marbles = createMarblesArrayWithWeights(new int[] {1});
+		Marble[] marbles = new Marble[] {new Marble(1)};
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -30,7 +30,7 @@ public class PuzzleTest {
 	
 	@Test
 	public void twoDifferentMarblesSolvesInOneTurn() {
-		Marble[] marbles = createMarblesArrayWithWeights(new int[] {1,2});
+		Marble[] marbles = createMarblesArray(2,1);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -40,7 +40,7 @@ public class PuzzleTest {
 
 	@Test
 	public void threeDifferentMarblesSolvesInOneTurn() {
-		Marble[] marbles = createMarblesArrayWithWeights(new int[] {1,1,2});
+		Marble[] marbles = createMarblesArray(3,2);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -50,7 +50,7 @@ public class PuzzleTest {
 
 	@Test
 	public void fourDifferentMarblesSolvesInTwoTurn() {
-		Marble[] marbles = createMarblesArrayWithWeights(new int[] {1,1,1,2});
+		Marble[] marbles = createMarblesArray(4,3);
 		Solver solver = new Solver();
 		int heavierMarbleIndex = solver.solve(marbles);
 		int turns = solver.getTurns();
@@ -91,10 +91,16 @@ public class PuzzleTest {
 		assertEquals(2, result);
 	}
 
-	private Marble[] createMarblesArrayWithWeights(int[] weights) {
-		Marble[] marbles = new Marble[weights.length];
-		for (int i=0; i<weights.length; i++)
-			marbles[i] = new Marble(weights[i]);
+	private Marble[] createMarblesArray(int howMany, int indexOfHeaviest) {
+		if (indexOfHeaviest < 0 || indexOfHeaviest >= howMany)
+			throw new IndexOutOfBoundsException("The parameter indexOfHeaviest should be in the range [0 .. howMany-1]");
+		Marble[] marbles = new Marble[howMany];
+		for (int i=0; i<howMany; i++) {
+			int weight = 1;
+			if (i == indexOfHeaviest)
+				weight = 2;
+			marbles[i] = new Marble(weight);
+		}
 		return marbles;
 	}
 

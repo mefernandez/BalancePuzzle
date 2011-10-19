@@ -11,11 +11,22 @@ It would seem a little awkward to do this homemade versioning and hosting the wh
 at github.com, but I find it more easy to navigate through folders to quickly see what's changing
 from one version to another rather than using Git itself. Maybe I'm wrong.
 
-So here's what's into each version.
+So here's what's into each package version.
 
 .v1
-Basic tests for 1, 2 and 3 marbles. Very helpful to clear out some things from my mind,
+Basic tests for 0, 1 and 2 marbles. Very helpful to clear out some things from my mind,
 like deciding classnames and basic API. Well, that's what TDD is for, isn't it?
 
 .v2
+When I wrote the test with 3 marbles, dummy code was no longer an option so I stopped lying
+to myself and started to implement some actual code. Not much though, just to pass the test.
+The Scales class came up naturally in this version.
+
+.v3
+Dealing with a test with 4 marbles just forced me to start dealing with array splits and chops.
+I even had to do a little spike on Arrays.copyRange because its functionality wasn't quite 
+clear to me.
+
+.v4
+Tests started to yell for some refactoring, so everything in this version is just about that.
 

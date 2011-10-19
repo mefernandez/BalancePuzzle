@@ -29,11 +29,4 @@ public class Solver {
 		return scales.getTurns();
 	}
 
-	/*
-	 * int turns = 0; int midElement = marbles.length / 2; Marble[] firstSlice =
-	 * Arrays.copyOfRange(marbles, 0, midElement); Marble[] secondSlice =
-	 * Arrays.copyOfRange(marbles, midElement, marbles.length); Scales scales =
-	 * new Scales();
-	 */
-
 }
