@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import org.junit.Test;
-import org.katas.tdd.balance.v4.Marble;
-import org.katas.tdd.balance.v4.Solver;
 
 public class PuzzleTest {
 

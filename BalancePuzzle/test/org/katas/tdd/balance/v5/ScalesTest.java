@@ -1,4 +1,4 @@
-package org.katas.tdd.balance.v4;
+package org.katas.tdd.balance.v5;
 
 import static org.junit.Assert.assertEquals;
 

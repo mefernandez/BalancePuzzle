@@ -28,5 +28,40 @@ I even had to do a little spike on Arrays.copyRange because its functionality wa
 clear to me.
 
 .v4
-Tests started to yell for some refactoring, so everything in this version is just about that.
+Tests started to ask for some refactoring, so everything in this version is just about that.
+
+.v5
+I felt the test could be leaving out some combinations of marbles that could be a problem
+to the binary chop algorithm, so I decided to create a test to try all different possibilities
+with up to 4 marbles before increasing the size of the problem.
+Let [o,x]* be the set of all possibilities of marbles combinations were [x] is the heaviest
+Then this is the set of tests and expected weighins according to a binary chop algorithm
+granted that chopping an odd number of marbles the last marbles remains out of the chopping scope:
+[x]: 0
+[x,o]*: 1
+[x,o,o]*: 1
+[x,o,o,o]*: 2
+
+Up to 4 marbles everywith worked like a charm, but when I added one more marble to the list,
+the test failed:
+
+[x,o,o,o,o]: 2
+[o,o,o,o,x]: 1!
+
+What's going on here? It's plain to see. In the first case, the heaviest marble is weighed,
+[x,o] <-> [o,o]
+leaning the scales to the left, thus forcing a second weighing of
+[x] <-> [o]
+which yields the right result. The same thing happens until the [x] reaches the last position.
+In that case, the balance scales remain balanced, and therefore there's no need to weigh again:
+the heaviest marble can only be in the last element!   
+
+Summarizing: In this version, I preferred to leave the test that try out all
+possibilities up to 4 marbles, and test the 5 marbles case apart, just for now.
+
+
+.v6
+Ok, time to test up to 8 marbles, without changing the algorithm just yet.
+
+
 
