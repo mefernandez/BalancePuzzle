@@ -59,9 +59,11 @@ the heaviest marble can only be in the last element!
 Summarizing: In this version, I preferred to leave the test that try out all
 possibilities up to 4 marbles, and test the 5 marbles case apart, just for now.
 
-
 .v6
-Ok, time to test up to 8 marbles, without changing the algorithm just yet.
+Ok, time to test up to 8 marbles, without changing the algorithm just yet. Using the binary
+chop algorithm the expected amount of weighings is always 3. But it can be done better!
+For that we'll have to switch the algorithm, which is the goal of the next version!
+ 
 
 
 
