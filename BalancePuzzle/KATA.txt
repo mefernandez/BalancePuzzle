@@ -42,7 +42,7 @@ granted that chopping an odd number of marbles the last marbles remains out of t
 [x,o,o]*: 1
 [x,o,o,o]*: 2
 
-Up to 4 marbles everywith worked like a charm, but when I added one more marble to the list,
+Up to 4 marbles everything worked like a charm, but when I added one more marble to the list,
 the test failed:
 
 [x,o,o,o,o]: 2
@@ -64,6 +64,13 @@ Ok, time to test up to 8 marbles, without changing the algorithm just yet. Using
 chop algorithm the expected amount of weighings is always 3. But it can be done better!
 For that we'll have to switch the algorithm, which is the goal of the next version!
  
+.v7 
+Time to do some refactoring. I have to make room for other algorithms other than binary chop.
+In this iteration I just want to encapsulate the binary chop algorithm and move it away from
+the Solver class. I started by extracting a super abstract class that holds the Scales and
+the basic interface to solve the problem, and pushed down the recursive behaviour. I also
+encapsulated the BinaryChop into a class. It sill needs work, but all tests are running fine, 
+so I'll leave it right there.
 
 
 
