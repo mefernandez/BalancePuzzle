@@ -72,5 +72,21 @@ the basic interface to solve the problem, and pushed down the recursive behaviou
 encapsulated the BinaryChop into a class. It sill needs work, but all tests are running fine, 
 so I'll leave it right there.
 
+.v8
+I started this version by writing a test that requires the Solver to find out the heaviest
+Marble in only 2 weighins, which of course fails due to BinaryChopStrategy. This forces to
+introduce a new strategy, which I called the EightMarbleChopStrategy, which of course only 
+works for 8 marbles. If a different number of marbles is passed by parameter, it delegates
+in a BinaryChop.
 
+One very important thing I noticed is that BinaryChop did a funny thing with odd number of
+marbles, and this refactorization to introduce this new strategy helped to get RecursiceSolver
+right.
 
+And that's it for eight marbles. All tests work fine.
+
+However, it seems that this problem wouldn't be complete if we did not try to extend the size
+of it to any conceivable number of marbles. But I think that problem starts to look like
+a linear programming problem, a much dreaded undergraduate lecture.
+In the coming versions this will be the subject of study, from a Test Driven Development
+point of view of course! 
